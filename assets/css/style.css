@@ -54,13 +54,45 @@ h1 {
   color: #3f52b4;
 }
 
+#formBusqueda {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+@media screen and (max-width: 762px) {
+  #formBusqueda {
+    flex-direction: column;
+  }
+}
+
 #label {
   color: white;
   font-size: 1.2rem;
 }
 
+#limpiar {
+  color: white;
+}
+
+#limpiarText {
+  color: white;
+}
+
 #spanLabel {
   font-size: 0.9rem;
+}
+
+aside.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+@media screen and (max-width: 762px) {
+  aside.container {
+    flex-direction: column;
+  }
 }
 
 #cardStyle {

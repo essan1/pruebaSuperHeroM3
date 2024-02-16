@@ -1,27 +1,27 @@
 $(function () {
 
-    //validar
-$("#formBusqueda").submit(function () {
-  event.preventDefault();
+  //validar
+  $("#formBusqueda").submit(function (e) {
+    e.preventDefault();
 
-  let numeroHeroe = $("#numeroSuperhero").val();
-  let regex = /^[1-9][0-9]{0,2}$/; // Regex para números entre 1 y 999
+    let numeroHeroe = $("#numeroSuperhero").val();
+    let regex = /^[1-9][0-9]{0,2}$/; // regex entre 1 y 999, 
 
-  if (!regex.test(numeroHeroe) || numeroHeroe < 1 || numeroHeroe > 732) {
-    if (isNaN(numeroHeroe)) {
-      alert("Por favor, solo un número entre 1 y 732. No letras, no intentes buscar tu superheroe por su nombre :)");
-    } else {
-      alert("Por favor, ingresa un número entre 1 y 732.");
+    if (!regex.test(numeroHeroe) || numeroHeroe < 1 || numeroHeroe > 732) {
+      if (isNaN(numeroHeroe)) {
+        alert("Por favor, solo un número entre 1 y 732. No letras, no intentes buscar tu superheroe por su nombre :)");
+      } else {
+        alert("Por favor, ingresa un número entre 1 y 732.");
+      }
+      return;
     }
-    return;
-  }
 
-  buscarSuperHeroe(numeroHeroe);
+    buscarSuperHeroe(numeroHeroe);
+  });
 });
 
-});
 
-//fx para mostrar estadisticas en grafico
+//fx para mostrar estadisticas en grafico pastel
 function mostrarEstadisticas(data) {
   let graficoPastel = new CanvasJS.Chart("chartContainer", {
     theme: "dark1",
@@ -32,6 +32,7 @@ function mostrarEstadisticas(data) {
         legendText: "{label}", // se agrega el label para mostrar como indicadores debajo del grafico
         toolTipContent: "{label}: <strong>{y}%</strong>",
         indexLabel: "{label} - {y}%",
+        //agrego aca los dataPoints de Y.
         dataPoints: [
           { y: +data.powerstats.intelligence, label: "Inteligencia" },
           { y: +data.powerstats.strength, label: "Fuerza" },
@@ -46,6 +47,10 @@ function mostrarEstadisticas(data) {
   graficoPastel.render();
 }
 
+
+
+
+//nos conectamos a la api x ajax
 function buscarSuperHeroe(numeroHeroe) {
   $.ajax({
     url: "https://www.superheroapi.com/api.php/3525635500807579/" + numeroHeroe,
@@ -53,7 +58,8 @@ function buscarSuperHeroe(numeroHeroe) {
     dataType: "json",
     success: function (data) {
       console.log(data);
-      // fx apis
+
+      // fx apis para la card
       $("#pfp").attr("src", data.image.url);
       $("#name").text("Nombre: " + data.name);
       $("#publicadoPor").text("Publicado por: " + data.biography.publisher);
