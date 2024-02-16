@@ -9,9 +9,19 @@ $(function () {
 
     if (!regex.test(numeroHeroe) || numeroHeroe < 1 || numeroHeroe > 732) {
       if (isNaN(numeroHeroe)) {
-        alert("Por favor, solo un número entre 1 y 732. No letras, no intentes buscar tu superheroe por su nombre :)");
+        // alert("Por favor, solo un número entre 1 y 732. No letras, no intentes buscar tu superheroe por su nombre :)");
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Por favor, solo un número entre 1 y 732. No letras, no intentes buscar tu superheroe por su nombre. Sorpréndete :)",
+        });
       } else {
-        alert("Por favor, ingresa un número entre 1 y 732.");
+        // alert("Por favor, ingresa un número entre 1 y 732.");
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Por favor, ingresa un número entre 1 y 732.",
+        });
       }
       return;
     }
