@@ -1,0 +1,38 @@
+:root {
+  --naranja: #ea7e12;
+  --rojo: #ea3212;
+}
+
+#titleSpan {
+  font-family: "Fredoka", sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  word-spacing: 0.8rem;
+}
+
+.navbar {
+  background-color: var(--naranja);
+  color: whitesmoke;
+}
+
+body {
+  background-color: grey;
+}
+
+h1 {
+  color: whitesmoke;
+}
+
+#label {
+  color: white;
+  font-size: 1.2rem;
+}
+
+#spanLabel {
+  font-size: 0.9rem;
+}
+
+#chartContainer {
+  height: 300px;
+  width: 100%;
+}
