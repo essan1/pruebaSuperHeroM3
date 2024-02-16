@@ -11,16 +11,47 @@
 }
 
 .navbar {
-  background-color: var(--naranja);
+  background-color: #101010;
   color: whitesmoke;
+}
+/* media para el logo del nav  */
+@media (min-width: 992px) {
+  #titleSpan img {
+    width: 500px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  #titleSpan img {
+    width: 400px;
+  }
+}
+
+@media (max-width: 767px) {
+  #titleSpan img {
+    width: 200px;
+  }
 }
 
 body {
-  background-color: grey;
+  background-color: #2a2a2a;
 }
 
 h1 {
   color: whitesmoke;
+}
+
+#bienvenido {
+  font-family: "Agdasima", sans-serif;
+  font-weight: 700;
+  font-size: 5rem;
+  font-style: normal;
+}
+
+#btn {
+  background-color: #f57536;
+  border-color: #3f52b4;
+  color: #3f52b4;
 }
 
 #label {
@@ -30,6 +61,16 @@ h1 {
 
 #spanLabel {
   font-size: 0.9rem;
+}
+
+#cardStyle {
+  background-color: #f57536;
+  border-color: blue;
+  color: white;
+}
+
+#superHeroEncontrado {
+  display: none;
 }
 
 #chartContainer {

@@ -6,16 +6,13 @@
     <title>::: S U P E R H E R O x F I N D E R :::</title>
     <link
       rel="shortcut icon"
-      href="./assets/img/favicon.ico"
+      href="./assets/img/favicon.png"
       type="image/x-icon"
     />
     <!-- GOOGLE FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Protest+Revolution&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Fredoka:wght@300..700&display=swap" rel="stylesheet">     
     <!-- FONTAWESOME -->
     <script
       src="https://kit.fontawesome.com/a6cec05c88.js"
@@ -37,50 +34,91 @@
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
       crossorigin="anonymous"
     ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- canvasjs -->
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <!-- sweet alert GRACIAS ALBA jajaja  -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
 
+
+
+
+
+
+
+
+
+
   <body>
-    <nav class="navbar navbar-dark">
-      <div class="container d-flex justify-content-center">
-        <span id="titleSpan" class="navbar-brand mb-0 h1"
-          >: : : S U P E R H E R O x F I N D E R : : :</span
+    <!-- nav -->
+    <nav class="navbar navbar-dark container-fluid">
+      <div class="container-fluid d-flex justify-content-center">
+        <a id="titleSpan" class="navbar-brand mb-0 h1" href="./index.html" title="inicio"
+          ><img src="./assets/img/logoextendido.png" alt=""></a
         >
       </div>
     </nav>
-    <div class="d-flex justify-content-center mt-4">
-      <iframe
-        title="superhero-gif"
-        src="https://giphy.com/embed/eptpl8zzB81p5SkQBR"
-        width="480"
-        height="270"
-        frameborder="0"
-        class="giphy-embed"
-        allowfullscreen
-      ></iframe>
+    <!-- img -->
+    <div id="imgBienvenida" class="d-flex justify-content-center mt-4">
+<iframe src="https://giphy.com/embed/ryxqsv4gUBlMQ" width="480" height="320" frameBorder="0" class="giphy-embed" allowFullScreen title="img-bienvenida"></iframe>
     </div>
 
-    <h1 class="container text-center my-4">
-      Bienvenido al <b> Super Hero x Finder</b>
+    <h1 id="bienvenido" class="container text-center my-4">
+      🦸🏻Bienvenido al <b> Super Hero x Finder</b>🦸🏿‍♀️
     </h1>
-    <form class="container d-flex justify-content-center" action="">
+
+    <!-- form -->
+    <form id="formBusqueda" class="container d-flex justify-content-center" action="">
       <label id="label" for="" class="me-4"
         ><b>Ingresa un número</b> para encontrar tu Super Hero: <br />
-        <span id="spanLabel">(Números permitidos: del 1 al 732)</span></label
-      >
-      <input type="text" title="input" placeholder="000" />
-      <button type="button" class="btn btn-danger ms-2">
+        <span id="spanLabel">(Números permitidos: del 1 al 732)</span>
+        </label>
+      <input id="numeroSuperhero" type="text" title="input" placeholder="000" />
+      <button id="btn" type="submit" class="btn btn-danger ms-2">
         Encontrar Mi SuperHero
       </button>
     </form>
+
+
+    <aside class="container d-flex justify-content-center">
+    <!-- superhero encontrado  -->
+    <section id="superHeroEncontrado" class="container my-4">
+      <h1 id="tituloCard" class="text-center"></h1>
+      <section class="d-flex justify-content-center">
+      <div id="cardStyle" class="card" style="width: 26rem">
+        <img id="pfp" src="" class="card-img-top" alt="" />
+        <div class="card-body">
+          <h5 class="card-title" id="name"></h5>
+          <p class="card-text" id="publicadoPor"></p>
+          <p class="card-text" id="ocupacion"></p>
+          <p class="card-text" id="lugarDeNacimiento"></p>
+          <p class="card-text" id="primeraAparicion"></p>
+          <p class="card-text" id="altura"></p>
+          <p class="card-text" id="peso"></p>
+          <p class="card-text" id="alianzas"></p>
+          <p class="card-text" id="parientes"></p> 
+        </div>
+        </section>
+      </div>
+    </section>
+    
+
+    <!-- div grafico  -->
+    <section class="container mt-4">
+    <h1 id="tituloGrafico"></h1>
     <div id="chartContainer"></div>
+    </section>
+    </aside>
+
+    <!-- script bootstrap -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-    <!-- canvasjs -->
-    <script src="https://canvasjs.com/assets/script/
-jquery.canvasjs.min.js"></script>
+
+    <!-- script -->
     <script src="./assets/js/main.js"></script>
   </body>
 </html>
